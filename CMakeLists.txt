@@ -11,12 +11,17 @@ qt_standard_project_setup()
 qt_add_executable(appqt-app
     main.cpp
 )
-
 qt_add_qml_module(appqt-app
     URI qt-app
     VERSION 1.0
-    QML_FILES Main.qml
-)
+    #    qui vanno specificate tutte le risorse, es:
+    #    RESOURCES qt-logo.png
+    QML_FILES
+        Main.qml
+        ui/BottomBar/BottomBar.qml
+        ui/RightSide/RightSide.qml
+        ui/LeftSide/LeftSide.qml
+    )
 
 set_target_properties(appqt-app PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
